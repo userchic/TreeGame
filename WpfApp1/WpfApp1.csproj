@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D98131D9-C1F8-4513-BABF-580B01442F3F}</ProjectGuid>
+    <ProjectGuid>{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WpfApp1</RootNamespace>
     <AssemblyName>WpfApp1</AssemblyName>
@@ -94,8 +94,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Эскизы\" />
+    <Resource Include="Drafts\Tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Drafts\Tent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

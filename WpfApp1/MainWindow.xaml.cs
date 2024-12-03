@@ -24,5 +24,12 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+        public void CreateField(object sender,EventArgs e)
+        {
+            //устанавливаем размер грида
+
+            //в гриде устанавливаем элементы с помощью генератора случайнызх чисел
+            grid.Background = new SolidColorBrush(Color.FromRgb(100, 100, 100));
+        }
     }
 }
