@@ -9,10 +9,10 @@
     <DockPanel >
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <Button Click="CreateField">Create</Button>
+                <Button Click="CreateRandomField">Create</Button>
             </MenuItem>
         </Menu>
-    <Grid x:Name="grid">
+    <Grid x:Name="grid" ShowGridLines="True">
         
     </Grid>
     </DockPanel>
