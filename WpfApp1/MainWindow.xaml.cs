@@ -26,52 +26,41 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        public bool [,] Trees;
-        public bool [,] Tents;
-
-        int[] horizontalNumbers;
-        int[] verticalNumbers;
-
-        public int fieldSizeX = 10;
-        public int fieldSizeY = 10;
+        public Field field;
         public void CreateRandomField(object sender,EventArgs e)
         {
             //обнуляем и устанавливаем размер грида
             ClearGrid();
-            SetGridSize(fieldSizeX + 1, fieldSizeY + 1);
-            //инициализация массивов
-            Tents = new bool[fieldSizeX, fieldSizeY];
-            Trees = new bool[fieldSizeX, fieldSizeY];
-            horizontalNumbers = new int[fieldSizeX];
-            verticalNumbers = new int[fieldSizeY];
+            //инициализация массивxов
+            InitializeField();
+            SetGridSize(field.SizeX + 1, field.SizeY + 1);
             //в гриде устанавливаем деревья с помощью генератора случайнызх чисел
-            RandomizeField(10);
+            RandomizeField(20);
             //размещение элементов на поле
             PlaceFieldElements();
             //расчет кол-ва палаток и отображение его
             InitializeNumbers();
             PlaceNumbers();
         }
-
+        public void InitializeField()
+        {
+            field = new Field();
+            field.Tents = new bool[field.SizeX, field.SizeY];
+            field.Trees = new bool[field.SizeX, field.SizeY];
+            field.horizontalNumbers = new int[field.SizeX];
+            field.verticalNumbers = new int[field.SizeY];
+        }
         private void PlaceNumbers()
         {
-            for (int i = 0;i < verticalNumbers.Length;i++)
+            for (int i = 0;i < field.verticalNumbers.Length;i++)
             {
                 Label label=new Label();
-                SetLabel(verticalNumbers, i, i, fieldSizeY + 1, label);
-                //label.Content = verticalNumbers[i];
-                //Grid.SetColumn(label, i);
-                //Grid.SetRow(label, fieldSizeY+1);
-                //grid.Children.Add(label);
+                SetLabel(field.verticalNumbers, i, i, field.SizeY + 1, label);
             }
-            for (int i = 0; i < horizontalNumbers.Length; i++)
+            for (int i = 0; i < field.horizontalNumbers.Length; i++)
             {
                 Label label=new Label();
-                SetLabel(horizontalNumbers, i, fieldSizeX + 1, i, label);
-                //label.Content = horizontalNumbers[i];
-                //Grid.SetColumn(label, fieldSizeX + 1);
-                //Grid.SetRow(label, i);
-                //grid.Children.Add(label);
+                SetLabel(field.horizontalNumbers, i, field.SizeX + 1, i, label);
             }
         }
         public void SetLabel(int[] mas,int i,int x,int y,Label label)
@@ -84,14 +73,14 @@ namespace WpfApp1
 
         private void InitializeNumbers()
         {
-            for(int i=0;i<Trees.GetLength(0);i++)
+            for(int i=0;i< field.Trees.GetLength(0);i++)
             {
-                for (int j = 0; j < Trees.GetLength(1); j++)
+                for (int j = 0; j < field.Trees.GetLength(1); j++)
                 {
-                    if (Tents[i,j]==true)
+                    if (field.Tents[i,j]==true)
                     {
-                        horizontalNumbers[j]++;
-                        verticalNumbers[i]++;
+                        field.horizontalNumbers[j]++;
+                        field.verticalNumbers[i]++;
                     }
                 }
             }
@@ -99,25 +88,19 @@ namespace WpfApp1
 
         private void PlaceFieldElements()
         {
-            for (int i = 0; i < Trees.GetLength(0); i++)
+            for (int i = 0; i < field.Trees.GetLength(0); i++)
             {
-                for (int j = 0; j < Trees.GetLength(1); j++)
+                for (int j = 0; j < field.Trees.GetLength(1); j++)
                 {
-                    if (Trees[i, j] == true)
+                    if (field.Trees[i, j] == true)
                     {
                         Tree tree = new Tree();
                         SetElem(tree, i, j);
-                        //Grid.SetColumn(tree, i);
-                        //Grid.SetRow(tree, j);
-                        //grid.Children.Add(tree);
                     }
                     else
                     {
-                        Space tree = new Space();
-                        SetElem(tree, i, j);
-                        //Grid.SetColumn(tree, i);
-                        //Grid.SetRow(tree, j);
-                        //grid.Children.Add(tree);
+                        Space space = new Space();
+                        SetElem(space, i, j);
                     }
                 }
             } 
@@ -147,10 +130,9 @@ namespace WpfApp1
             {
                 int x, y;
                 do
-                {
                     (x, y) = (rand.Next(10), rand.Next(10));
-                } while (Trees[x, y] == true || Tents[x,y]==true || !TreeIsPlaceable(x,y));
-                Trees[x, y] = true;
+                while (field.Trees[x, y] == true || field.Tents[x,y]==true || !TreeIsPlaceable(x,y));
+                field.Trees[x, y] = true;
                 PlaceTentAround(x, y);
             }
         }
@@ -171,7 +153,7 @@ namespace WpfApp1
 
             } while (!IsAvailableForTent(x, y, side));
             ChooseSide(ref x, ref y, side);
-            Tents[x, y] = true;
+            field.Tents[x, y] = true;
         }
 
         public bool IsAvailableForTent(int x, int y, int side)
@@ -191,9 +173,9 @@ namespace WpfApp1
                     for (int j = y - 1; j < y + 2; j++)
                     {
                         bool flag = IsInField(i, j);
-                        if ((i != x || j != y) & flag) 
+                        if ( flag) 
                         {
-                            if (Tents[i, j] == true)
+                            if (field.Tents[i, j] == true)
                                 return false;
                         }
                     }
@@ -223,6 +205,6 @@ namespace WpfApp1
                     y = y - 1; break;
             }
         }
-        public bool IsInField(int x, int y) => (x >= 0 & y >= 0) && (x < fieldSizeX & y < fieldSizeY);
+        public bool IsInField(int x, int y) => (x >= 0 & y >= 0) && (x < field.SizeX & y < field.SizeY);
     }
 }
