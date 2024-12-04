@@ -39,13 +39,16 @@ namespace WpfApp1
             //обнуляем и устанавливаем размер грида
             ClearGrid();
             SetGridSize(fieldSizeX + 1, fieldSizeY + 1);
-            //в гриде устанавливаем деревья с помощью генератора случайнызх чисел
+            //инициализация массивов
             Tents = new bool[fieldSizeX, fieldSizeY];
             Trees = new bool[fieldSizeX, fieldSizeY];
             horizontalNumbers = new int[fieldSizeX];
             verticalNumbers = new int[fieldSizeY];
+            //в гриде устанавливаем деревья с помощью генератора случайнызх чисел
             RandomizeField(10);
+            //размещение элементов на поле
             PlaceFieldElements();
+            //расчет кол-ва палаток и отображение его
             InitializeNumbers();
             PlaceNumbers();
         }
@@ -55,19 +58,28 @@ namespace WpfApp1
             for (int i = 0;i < verticalNumbers.Length;i++)
             {
                 Label label=new Label();
-                label.Content = verticalNumbers[i];
-                Grid.SetColumn(label, i);
-                Grid.SetRow(label, fieldSizeY+1);
-                grid.Children.Add(label);
+                SetLabel(verticalNumbers, i, i, fieldSizeY + 1, label);
+                //label.Content = verticalNumbers[i];
+                //Grid.SetColumn(label, i);
+                //Grid.SetRow(label, fieldSizeY+1);
+                //grid.Children.Add(label);
             }
             for (int i = 0; i < horizontalNumbers.Length; i++)
             {
                 Label label=new Label();
-                label.Content = horizontalNumbers[i];
-                Grid.SetRow(label, i);
-                Grid.SetColumn(label, fieldSizeX + 1);
-                grid.Children.Add(label);
+                SetLabel(horizontalNumbers, i, fieldSizeX + 1, i, label);
+                //label.Content = horizontalNumbers[i];
+                //Grid.SetColumn(label, fieldSizeX + 1);
+                //Grid.SetRow(label, i);
+                //grid.Children.Add(label);
             }
+        }
+        public void SetLabel(int[] mas,int i,int x,int y,Label label)
+        {
+            label.Content = mas[i];
+            Grid.SetColumn(label, x);
+            Grid.SetRow(label, y);
+            grid.Children.Add(label);
         }
 
         private void InitializeNumbers()
@@ -94,21 +106,28 @@ namespace WpfApp1
                     if (Trees[i, j] == true)
                     {
                         Tree tree = new Tree();
-                        Grid.SetColumn(tree, i);
-                        Grid.SetRow(tree, j);
-                        grid.Children.Add(tree);
+                        SetElem(tree, i, j);
+                        //Grid.SetColumn(tree, i);
+                        //Grid.SetRow(tree, j);
+                        //grid.Children.Add(tree);
                     }
                     else
                     {
                         Space tree = new Space();
-                        Grid.SetColumn(tree, i);
-                        Grid.SetRow(tree, j);
-                        grid.Children.Add(tree);
+                        SetElem(tree, i, j);
+                        //Grid.SetColumn(tree, i);
+                        //Grid.SetRow(tree, j);
+                        //grid.Children.Add(tree);
                     }
                 }
             } 
         }
-
+        public void SetElem(UIElement elem,int x,int y)
+        {
+            Grid.SetColumn(elem, x);
+            Grid.SetRow(elem, y);
+            grid.Children.Add(elem);
+        }
         public void ClearGrid()
         {
             grid.Children.Clear();
@@ -157,11 +176,14 @@ namespace WpfApp1
 
         public bool IsAvailableForTent(int x, int y, int side)
         {
+            //ищем палатки с нужной стороны
+            ChooseSide(ref x, ref y, side);
+            
             //      x-1    x    x+1   
             // y-1              
-            //  y               
-            // y+1               
-            ChooseSide(ref x, ref y, side);
+            //  y        (x,y)  <----дерево   
+            // y+1                      мы ищем вокруг него палатки
+
             if (IsInField(x, y))
             {
                 for (int i = x - 1; i < x + 2; i++)
@@ -181,8 +203,14 @@ namespace WpfApp1
                 return false;
             return true;
         }
+        //метод меняет x и у чтобы они соответствовали элементу находящемуся с нужной стороны
         public void ChooseSide(ref int x,ref int y,int side)
         {
+            //      x-1    x    x+1
+            // y-1         1    
+            //  y    0   (x,y)   2
+            // y+1         3       
+
             switch (side)
             {
                 case 0:

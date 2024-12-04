@@ -9,14 +9,10 @@
     <DockPanel >
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <Button Click="CreateRandomField">Create</Button>
+                <MenuItem Header="Создать" Click="CreateRandomField"></MenuItem>
             </MenuItem>
         </Menu>
     <Grid x:Name="grid" ShowGridLines="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="27*"/>
-                <ColumnDefinition Width="773*"/>
-            </Grid.ColumnDefinitions>
 
         </Grid>
     </DockPanel>
