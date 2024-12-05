@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using WpfApp1.Elements;
 
-namespace WpfApp1
+namespace WpfApp1.NormalElements
 {
     public class Tent : State
     {

@@ -30,5 +30,5 @@ C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Tree.g.cs
 C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Tree.baml
-C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Space.g.cs
-C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Space.baml
+C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Cell.g.cs
+C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Cell.baml

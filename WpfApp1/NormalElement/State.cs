@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Elements;
 
-namespace WpfApp1
+namespace WpfApp1.NormalElements
 {
     public abstract class State
     {

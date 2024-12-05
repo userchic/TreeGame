@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using WpfApp1.Elements;
 
-namespace WpfApp1
+namespace WpfApp1.NormalElements
 {
     public class Empty : State
     {

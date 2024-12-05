@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.NormalElements;
 
 namespace WpfApp1.Elements
 {
@@ -26,7 +27,6 @@ namespace WpfApp1.Elements
             state=new Empty();
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             state.Handle(this);

@@ -57,12 +57,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Field.cs" />
+    <Compile Include="Field\Elements\Cell.cs" />
+    <Compile Include="Field\Field.cs" />
+    <Compile Include="Field\Elements\Empty.cs" />
+    <Compile Include="Field\Elements\Tent.cs" />
+    <Compile Include="Field\Elements\Tree.cs" />
+    <Compile Include="FieldGenerator.cs" />
     <Compile Include="NormalElement\Empty.cs" />
     <Compile Include="NormalElement\Grass.cs" />
     <Compile Include="NormalElement\State.cs" />
     <Compile Include="NormalElement\Tent.cs" />
-    <Page Include="Elements\Space.xaml">
+    <Page Include="Elements\Cell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -78,8 +83,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Elements\Space.xaml.cs">
-      <DependentUpon>Space.xaml</DependentUpon>
+    <Compile Include="Elements\Cell.xaml.cs">
+      <DependentUpon>Cell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Elements\Tree.xaml.cs">
       <DependentUpon>Tree.xaml</DependentUpon>
