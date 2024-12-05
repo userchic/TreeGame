@@ -36,6 +36,8 @@ namespace WpfApp1
             ChooseSide(ref x, ref y, side);
             Field.PlaceTent(x, y);
         }
+
+        //метод меняет x и у чтобы они соответствовали элементу находящемуся с нужной стороны
         public void ChooseSide(ref int x, ref int y, int side)
         {
             //      x-1    x    x+1

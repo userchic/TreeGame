@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,41 +33,62 @@ namespace WpfApp1
         public FieldGenerator gen=new FieldGenerator();
         public void CreateRandomField(object sender,EventArgs e)
         {
-            //обнуляем и устанавливаем размер грида
             ClearGrid();
-            //инициализация поля
             InitializeField();
             SetGridSize(field.SizeX + 1, field.SizeY + 1);
-            //в гриде устанавливаем деревья с помощью генератора случайнызх чисел
-            //размещение элементов на поле
             PlaceFieldElements();
-            //расчет кол-ва палаток и отображение его
             PlaceNumbers();
         }
+        public void SaveField(object sender,EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (FileStream f = new FileStream(saveFileDialog.FileName,FileMode.Create))
+                {
+                    BinaryFormatter formatter= new BinaryFormatter();
+                    formatter.Serialize(f, field);
+                }
+            }
+        }
+        public void OpenField(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                using (FileStream f = new FileStream(openFileDialog.FileName, FileMode.Open))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    field= (Field)formatter.Deserialize(f);
+                }
+                ClearGrid();
+                SetGridSize(field.SizeX + 1, field.SizeY + 1);
+                PlaceFieldElements();
+                PlaceNumbers();
+            }
+        }
+        //инициализация поля случайными значениями
         public void InitializeField()
         {
             field = gen.Generate();
         }
+        //отображение кол-ва палаток 
         private void PlaceNumbers()
         {
             for (int i = 0;i < field.verticalNumbers.Length;i++)
             {
                 Label label=new Label();
-                SetLabel(field.verticalNumbers, i, i, field.SizeY + 1, label);
+                label.Content = field.verticalNumbers[i];
+                SetElem(label, i, field.SizeY + 1);
             }
             for (int i = 0; i < field.horizontalNumbers.Length; i++)
             {
                 Label label=new Label();
-                SetLabel(field.horizontalNumbers, i, field.SizeX + 1, i, label);
+                label.Content = field.horizontalNumbers[i];
+                SetElem(label, field.SizeX + 1, i);
             }
         }
-        public void SetLabel(int[] mas,int i,int x,int y,Label label)
-        {
-            label.Content = mas[i];
-            Grid.SetColumn(label, x);
-            Grid.SetRow(label, y);
-            grid.Children.Add(label);
-        }
+            //размещение элементов на поле
         private void PlaceFieldElements()
         {
             for (int i = 0; i < field.SizeY; i++)
@@ -89,6 +114,7 @@ namespace WpfApp1
             Grid.SetRow(elem, y);
             grid.Children.Add(elem);
         }
+        //обнуляем и устанавливаем размер грида
         public void ClearGrid()
         {
             grid.Children.Clear();
@@ -102,10 +128,5 @@ namespace WpfApp1
             for (int i = 0; i < verticalN; i++)
                 grid.RowDefinitions.Add(new RowDefinition());
         }
-
-
-
-        //метод меняет x и у чтобы они соответствовали элементу находящемуся с нужной стороны
-
     }
 }

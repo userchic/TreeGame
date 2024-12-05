@@ -1,6 +1,9 @@
 ﻿
+using System;
+
 namespace WpfApp1.FieldElements
 {
+    [Serializable]
     public class Tree : Cell
     {
         public override bool IsEmpty() => false;

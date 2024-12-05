@@ -3,32 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\TreeGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\fieldgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\fieldgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\field\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\field\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\normalelement\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\normalelement\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\elements\\cell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\elements\\cell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\Desktop\\TreeGame\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\field\\elements\\empty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\field\\elements\\tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\field\\elements\\tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\field\\elements\\tent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\field\\elements\\tent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\Desktop\\TreeGame\\wpfapp1\\field\\elements\\empty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\field\\elements\\empty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\field\\elements\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\field\\elements\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\Desktop\\TreeGame\\wpfapp1\\field\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\field\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\Desktop\\TreeGame\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\desktop\\treegame\\wpfapp1\\fieldgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\fieldgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\Desktop\\TreeGame\\wpfapp1\\normalelement\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\normalelement\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\Desktop\\TreeGame\\wpfapp1\\elements\\cell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5277BFDD-E0A4-4854-BB42-8CF13DCAA417}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\elements\\cell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,77 +55,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FieldGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\FieldGenerator.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\FieldGenerator.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\FieldGenerator.cs",
-              "RelativeToolTip": "WpfApp1\\FieldGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T10:06:44.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAjwBwAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAA0wE8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T10:24:42.369Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "State.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\NormalElement\\State.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\NormalElement\\State.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\NormalElement\\State.cs",
-              "RelativeToolTip": "WpfApp1\\NormalElement\\State.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Tree.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Tree.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Field\\Elements\\Tree.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Tree.cs",
+              "RelativeToolTip": "WpfApp1\\Field\\Elements\\Tree.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T10:18:07.604Z",
+              "WhenOpened": "2024-12-05T14:01:09.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tent.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Tent.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Field\\Elements\\Tent.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Tent.cs",
+              "RelativeToolTip": "WpfApp1\\Field\\Elements\\Tent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:01:07.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cell.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Cell.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Field\\Elements\\Cell.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Cell.cs",
+              "RelativeToolTip": "WpfApp1\\Field\\Elements\\Cell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:00:14.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FieldGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\FieldGenerator.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\FieldGenerator.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\FieldGenerator.cs",
+              "RelativeToolTip": "WpfApp1\\FieldGenerator.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T10:06:44.916Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Cell.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Elements\\Cell.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Elements\\Cell.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Elements\\Cell.xaml.cs",
-              "RelativeToolTip": "WpfApp1\\Elements\\Cell.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T10:17:55.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Empty.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Empty.cs",
               "RelativeDocumentMoniker": "WpfApp1\\Field\\Elements\\Empty.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Elements\\Empty.cs",
               "RelativeToolTip": "WpfApp1\\Field\\Elements\\Empty.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T10:17:45.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Field.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Field.cs",
               "RelativeDocumentMoniker": "WpfApp1\\Field\\Field.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Field\\Field.cs",
               "RelativeToolTip": "WpfApp1\\Field\\Field.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCoAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T17:36:06.374Z",
               "EditorCaption": ""
@@ -129,6 +154,30 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-03T10:24:43.595Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Elements\\Cell.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Elements\\Cell.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\Elements\\Cell.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Elements\\Cell.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T10:17:55.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\NormalElement\\State.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\NormalElement\\State.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\TreeGame\\WpfApp1\\NormalElement\\State.cs",
+              "RelativeToolTip": "WpfApp1\\NormalElement\\State.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T10:18:07.604Z"
             }
           ]
         },

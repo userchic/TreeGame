@@ -7,6 +7,7 @@ using WpfApp1.FieldElements;
 
 namespace WpfApp1
 {
+    [Serializable]
     public class Field
     {
         public Cell[,] Cells;
