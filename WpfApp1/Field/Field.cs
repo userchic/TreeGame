@@ -49,5 +49,13 @@ namespace WpfApp1
             Cells[x, y] = new Tree();
         }
         public bool IsInField(int x, int y) => (x >= 0 & y >= 0) && (x < SizeX & y < SizeY);
+
+        public bool IsNotNearTree(int i, int j)
+        {
+            if (IsEmptyOrTree(i, j + 1) & IsEmptyOrTree(i - 1, j) & IsEmptyOrTree(i + 1, j) & IsEmptyOrTree(i, j - 1)) return true;
+            return false;
+        }
+        public bool IsEmptyOrTree(int i,int j) => (IsInField(i, j) && (Cells[i,j].IsEmpty()||Cells[i,j].IsTent())) ||!IsInField(i,j);
+
     }
 }

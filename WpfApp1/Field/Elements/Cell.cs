@@ -8,5 +8,7 @@ namespace WpfApp1.FieldElements
         public abstract bool IsEmpty();
         public abstract bool IsTent();
         public abstract bool IsTree();
+
+
     }
 }

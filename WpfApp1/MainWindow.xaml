@@ -17,5 +17,10 @@
     <Grid x:Name="grid" ShowGridLines="True">
 
         </Grid>
+        <WrapPanel DockPanel.Dock="Right" Orientation="Vertical" Background="Gray" Margin="10" >
+            <Button Content="Заполнить заведомо пустые ячейки травой" Click="FillGrass">
+                
+            </Button>
+        </WrapPanel>
     </DockPanel>
 </Window>

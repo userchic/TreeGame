@@ -31,5 +31,9 @@ namespace WpfApp1.Elements
         {
             state.Handle(this);
         }
+        public void ChangeState()
+        {
+            state.Handle(this);
+        }
     }
 }

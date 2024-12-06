@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Elements;
+using WpfApp1.NormalElements;
 
 namespace WpfApp1
 {
@@ -31,10 +32,11 @@ namespace WpfApp1
         }
         public Field field;
         public FieldGenerator gen=new FieldGenerator();
+        public UIElement[,] fieldElements; 
         public void CreateRandomField(object sender,EventArgs e)
         {
             ClearGrid();
-            InitializeField();
+            GenerateField();
             SetGridSize(field.SizeX + 1, field.SizeY + 1);
             PlaceFieldElements();
             PlaceNumbers();
@@ -67,8 +69,21 @@ namespace WpfApp1
                 PlaceNumbers();
             }
         }
+        public void FillGrass(object sender, EventArgs e)
+        {
+            for (int i = 0; i < field.SizeX; i++)
+            {
+                for (int j = 0; j < field.SizeX; j++)
+                {
+                    if (field.IsNotNearTree(i, j) & field.Cells[i,j].IsEmpty())
+                    {
+                        ((Space)fieldElements[i, j]).ChangeState();
+                    }
+                }
+            }
+        }
         //инициализация поля случайными значениями
-        public void InitializeField()
+        public void GenerateField()
         {
             field = gen.Generate();
         }
@@ -99,11 +114,13 @@ namespace WpfApp1
                     {
                         Tree tree = new Tree();
                         SetElem(tree, i, j);
+                        fieldElements[i, j] = tree;
                     }
                     else
                     {
                         Space space = new Space();
                         SetElem(space, i, j);
+                        fieldElements[i, j] = space;
                     }
                 }
             } 
@@ -123,10 +140,11 @@ namespace WpfApp1
         }
         public void SetGridSize(int horizontalN,int verticalN )
         {
+            fieldElements = new UIElement[field.SizeX, field.SizeY];
             for (int i = 0; i < horizontalN; i++)
-                grid.ColumnDefinitions.Add(new ColumnDefinition());
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width=new GridLength (40)});
             for (int i = 0; i < verticalN; i++)
-                grid.RowDefinitions.Add(new RowDefinition());
+                grid.RowDefinitions.Add(new RowDefinition() { Height=new GridLength(40)});
         }
     }
 }
