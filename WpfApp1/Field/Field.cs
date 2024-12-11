@@ -52,10 +52,10 @@ namespace WpfApp1
 
         public bool IsNotNearTree(int i, int j)
         {
-            if (IsEmptyOrTree(i, j + 1) & IsEmptyOrTree(i - 1, j) & IsEmptyOrTree(i + 1, j) & IsEmptyOrTree(i, j - 1)) return true;
+            if (IsEmptyOrTent(i, j + 1) & IsEmptyOrTent(i - 1, j) & IsEmptyOrTent(i + 1, j) & IsEmptyOrTent(i, j - 1)) return true;
             return false;
         }
-        public bool IsEmptyOrTree(int i,int j) => (IsInField(i, j) && (Cells[i,j].IsEmpty()||Cells[i,j].IsTent())) ||!IsInField(i,j);
+        public bool IsEmptyOrTent(int i,int j) => (IsInField(i, j) && (Cells[i,j].IsEmpty()||Cells[i,j].IsTent())) ||!IsInField(i,j);
 
     }
 }

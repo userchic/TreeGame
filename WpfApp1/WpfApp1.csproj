@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FieldSolver.cs" />
     <Compile Include="Field\Elements\Cell.cs" />
     <Compile Include="Field\Field.cs" />
     <Compile Include="Field\Elements\Empty.cs" />

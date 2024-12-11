@@ -10,5 +10,6 @@ namespace WpfApp1.NormalElements
     public abstract class State
     {
         public abstract void Handle(Space context);
+
     }
 }

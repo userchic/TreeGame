@@ -32,14 +32,52 @@ namespace WpfApp1
         }
         public Field field;
         public FieldGenerator gen=new FieldGenerator();
-        public UIElement[,] fieldElements; 
+        public FieldSolver solver = new FieldSolver();
+        public UIElement[,] fieldElements;
         public void CreateRandomField(object sender,EventArgs e)
         {
             ClearGrid();
             GenerateField();
+            solver.TreesTents=GetTrees();
+            ConnectSolver();
             SetGridSize(field.SizeX + 1, field.SizeY + 1);
             PlaceFieldElements();
+            solver.fieldElements = fieldElements;
             PlaceNumbers();
+        }
+
+        private void ConnectSolver()
+        {
+            solver.field=field;
+        }
+        public delegate void CellDelegate(int x, int y);
+        public Dictionary<(int, int), List<(int, int)>> GetTrees()
+        {
+            Dictionary<(int, int), List<(int, int)>> trees = new Dictionary<(int, int), List<(int, int)>>();
+            for (int i = 0; i < field.SizeX; i++)
+            {
+                for (int j = 0; j < field.SizeY; j++)
+                {
+                    if (field.Cells[i, j].IsTree())
+                    {
+                        List<(int, int)> cellsAroundTree = new List<(int, int)>();
+                        ForEachBorderingCell(i, j, (int x, int y) => { if (!field.Cells[x,y].IsTree())cellsAroundTree.Add((x, y)); });
+                        trees[(i, j)] = cellsAroundTree;
+                    }
+                }
+            }
+            return trees;
+        }
+        public void ForEachBorderingCell(int x, int y, CellDelegate del)
+        {
+            if (field.IsInField(x - 1, y))
+                del(x - 1, y);
+            if (field.IsInField(x, y + 1))
+                del(x, y + 1);
+            if (field.IsInField(x + 1, y))
+                del(x + 1, y);
+            if (field.IsInField(x, y - 1))
+                del(x, y - 1);
         }
         public void SaveField(object sender,EventArgs e)
         {
@@ -63,6 +101,7 @@ namespace WpfApp1
                     BinaryFormatter formatter = new BinaryFormatter();
                     field= (Field)formatter.Deserialize(f);
                 }
+                solver.TreesTents = GetTrees();
                 ClearGrid();
                 SetGridSize(field.SizeX + 1, field.SizeY + 1);
                 PlaceFieldElements();
@@ -71,21 +110,22 @@ namespace WpfApp1
         }
         public void FillGrass(object sender, EventArgs e)
         {
-            for (int i = 0; i < field.SizeX; i++)
-            {
-                for (int j = 0; j < field.SizeX; j++)
-                {
-                    if (field.IsNotNearTree(i, j) & field.Cells[i,j].IsEmpty())
-                    {
-                        ((Space)fieldElements[i, j]).ChangeState();
-                    }
-                }
-            }
+            solver.FillGrass();
         }
+        public void FindZeroLines(object sender,EventArgs e)
+        {
+            solver.CleanZeroLines();
+        }
+        public void FindSymmetricTrees1(object sender,EventArgs e)
+        {
+            solver.FindSymmetricTrees();
+        }
+
         //инициализация поля случайными значениями
         public void GenerateField()
         {
             field = gen.Generate();
+            fieldElements = new UIElement[field.SizeX, field.SizeY];
         }
         //отображение кол-ва палаток 
         private void PlaceNumbers()
@@ -106,7 +146,7 @@ namespace WpfApp1
             //размещение элементов на поле
         private void PlaceFieldElements()
         {
-            for (int i = 0; i < field.SizeY; i++)
+            for (int i = 0; i < field.SizeX; i++)
             {
                 for (int j = 0; j < field.SizeY; j++)
                 {

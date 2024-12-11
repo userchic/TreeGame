@@ -18,9 +18,11 @@
 
         </Grid>
         <WrapPanel DockPanel.Dock="Right" Orientation="Vertical" Background="Gray" Margin="10" >
-            <Button Content="Заполнить заведомо пустые ячейки травой" Click="FillGrass">
-                
+            <Button Content="Заполнить заведомо пустые ячейки травой" Click="FillGrass">                
             </Button>
+            <Button Content="найти деревья у которых палатки могут быть только в 2 ячейках" Click="FindSymmetricTrees1">
+            </Button>
+            <Button Content="Найти пустые строки и столбцы(с нулями)" Click="FindZeroLines"></Button>
         </WrapPanel>
     </DockPanel>
 </Window>
