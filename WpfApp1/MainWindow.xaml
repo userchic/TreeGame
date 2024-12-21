@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1000">
     <DockPanel >
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -18,11 +18,13 @@
 
         </Grid>
         <WrapPanel DockPanel.Dock="Right" Orientation="Vertical" Background="Gray" Margin="10" >
-            <Button Content="Заполнить заведомо пустые ячейки травой" Click="FillGrass">                
-            </Button>
-            <Button Content="найти деревья у которых палатки могут быть только в 2 ячейках" Click="FindSymmetricTrees1">
-            </Button>
-            <Button Content="Найти пустые строки и столбцы(с нулями)" Click="FindZeroLines"></Button>
+            <Button Content="Заполнить заведомо пустые ячейки травой" Click="FillGrass"/>
+            <Button Content="Найти пустые строки и столбцы(с нулями)" Click="FindZeroLines"/>
+            <Button Content="Найти деревья с 3 ячейками" Click="FindThreeCellTrees"/>
+            <Button Content="Найти деревья с 2 ячейками" Click="FindSymmetricTrees1"/>
+            <Button Content="Найти деревья с 1 ячейкой" Click="FindOneCellTrees"/>
+            <Button Content="Заполнить строки и столбцы где поставлены все палатки" Click="FillReadyLines"/>
+            <Button Content="Обработать примитивную комбинаторику к каждой строке" Click="OneLineCombinations"/>
         </WrapPanel>
     </DockPanel>
 </Window>
