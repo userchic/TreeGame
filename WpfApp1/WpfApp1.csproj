@@ -64,10 +64,11 @@
     <Compile Include="Field\Elements\Tent.cs" />
     <Compile Include="Field\Elements\Tree.cs" />
     <Compile Include="FieldGenerator.cs" />
-    <Compile Include="NormalElement\Empty.cs" />
-    <Compile Include="NormalElement\Grass.cs" />
-    <Compile Include="NormalElement\State.cs" />
-    <Compile Include="NormalElement\Tent.cs" />
+    <Compile Include="State\Empty.cs" />
+    <Compile Include="State\Grass.cs" />
+    <Compile Include="State\State.cs" />
+    <Compile Include="State\Tent.cs" />
+    <Compile Include="TestWindowViewModel.cs" />
     <Page Include="Elements\Cell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -14,10 +14,14 @@
                 <MenuItem  Header="Открыть" Click="OpenField"></MenuItem>
             </MenuItem>
         </Menu>
-    <Grid x:Name="grid" ShowGridLines="True">
-
-        </Grid>
-        <WrapPanel DockPanel.Dock="Right" Orientation="Vertical" Background="Gray" Margin="10" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"  x:Name="grid" ShowGridLines="True">
+            </Grid>
+            <WrapPanel Grid.Column="1" DockPanel.Dock="Right" Orientation="Vertical" Background="Gray" Margin="10" >
             <Button Content="Заполнить заведомо пустые ячейки травой" Click="FillGrass"/>
             <Button Content="Найти пустые строки и столбцы(с нулями)" Click="FindZeroLines"/>
             <Button Content="Найти деревья с 3 ячейками" Click="FindThreeCellTrees"/>
@@ -25,6 +29,15 @@
             <Button Content="Найти деревья с 1 ячейкой" Click="FindOneCellTrees"/>
             <Button Content="Заполнить строки и столбцы где поставлены все палатки" Click="FillReadyLines"/>
             <Button Content="Обработать примитивную комбинаторику к каждой строке" Click="OneLineCombinations"/>
-        </WrapPanel>
+                <StackPanel DataContext="{Binding CurrentGenerator}">
+                    <TextBlock Text="Кол-во палаток"/>
+                    <TextBox Text="{Binding Tents}" />
+                    <TextBlock Text="Размер по оси X"/>
+                    <TextBox Text="{Binding XAxis}"/>
+                    <TextBlock Text="Размер по оси Y"/>
+                    <TextBox Text="{Binding YAxis}" x:Name="YAxis" />
+                </StackPanel>
+            </WrapPanel>
+        </Grid>
     </DockPanel>
 </Window>

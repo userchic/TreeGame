@@ -29,15 +29,14 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new TestWindowViewModel();
         }
         public Field field;
-        public FieldGenerator gen=new FieldGenerator();
         public FieldSolver solver = new FieldSolver();
         public UIElement[,] fieldElements;
         public void CreateRandomField(object sender,EventArgs e)
         {
             ClearGrid();
-            GenerateField();
             ConnectSolver();
             solver.FillDictionaries();
             SetGridSize(field.SizeX + 1, field.SizeY + 1);
@@ -80,28 +79,25 @@ namespace WpfApp1
             }
         }
         //инициализация поля случайными значениями
-        public void GenerateField()
-        {
-            field = gen.Generate();
-            fieldElements = new UIElement[field.SizeX, field.SizeY];
-        }
+
         //отображение кол-ва палаток 
         private void PlaceNumbers()
         {
-            for (int i = 0;i < field.verticalNumbers.Length;i++)
-            {
-                Label label=new Label();
-                label.Content = field.verticalNumbers[i];
-                SetElem(label, i, field.SizeY + 1);
-            }
-            for (int i = 0; i < field.horizontalNumbers.Length; i++)
+            for (int i = 0;i < field.horizontalNumbers.Length;i++)
             {
                 Label label=new Label();
                 label.Content = field.horizontalNumbers[i];
+                SetElem(label, i, field.SizeY + 1);
+            }
+            for (int i = 0; i < field.verticalNumbers.Length; i++)
+            {
+                Label label=new Label();
+                label.Content = field.verticalNumbers[i];
                 SetElem(label, field.SizeX + 1, i);
             }
         }
-            //размещение элементов на поле
+        
+        //размещение элементов на поле
         private void PlaceFieldElements()
         {
             for (int i = 0; i < field.SizeX; i++)
@@ -138,11 +134,10 @@ namespace WpfApp1
         }
         public void SetGridSize(int horizontalN,int verticalN )
         {
-            fieldElements = new UIElement[field.SizeX, field.SizeY];
             for (int i = 0; i < horizontalN; i++)
-                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width=new GridLength (40)});
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width=new GridLength (30)});
             for (int i = 0; i < verticalN; i++)
-                grid.RowDefinitions.Add(new RowDefinition() { Height=new GridLength(40)});
+                grid.RowDefinitions.Add(new RowDefinition() { Height=new GridLength(30)});
         }
         #region Реализации паттернов
         public void FillGrass(object sender, EventArgs e)

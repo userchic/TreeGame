@@ -1,16 +1,57 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace WpfApp1
 {
-    public class FieldGenerator
+    public class FieldGenerator: INotifyPropertyChanged
     {
         Random rand = new Random();
         Field Field;
+
+        private int tents;
+        private int xSize;
+        private int ySize;
+        public int Tents { get
+            {
+                return tents;
+            }
+
+            set
+            {
+                tents = value;
+                OnPropertyChanged("Tents");
+            }
+        }
+        public int XAxis {
+            get
+            {
+                return xSize;
+            }
+
+            set
+            {
+                xSize = value;
+                OnPropertyChanged("XSize");
+            }
+        }
+        public int YAxis {
+            get
+            {
+                return ySize;
+            }
+
+            set
+            {
+                ySize = value;
+                OnPropertyChanged("YSize");
+            }
+        }
         public Field Generate()
         {
-            Field = new Field();
-            RandomizeField(18);
+            Field = new Field(XAxis,YAxis);
+            RandomizeField(Tents);
             return Field;
         }
         private void RandomizeField(int trees)
@@ -19,8 +60,8 @@ namespace WpfApp1
             {
                 int x, y;
                 do
-                    (x, y) = (rand.Next(10), rand.Next(10));
-                while (Field.Cells[x, y].IsTree() || Field.Cells[x, y].IsTent() || !TreeIsPlaceable(x, y));
+                    (x, y) = (rand.Next(Field.SizeX), rand.Next(Field.SizeY));
+                while ( !Field.Cells[x, y].IsEmpty() || !TreeIsPlaceable(x, y));
                 Field.PlaceTree(x, y);
                 PlaceTentAround(x, y);
             }
@@ -89,10 +130,16 @@ namespace WpfApp1
                         }
                     }
                 }
+                return true;
             }
             else
                 return false;
-            return true;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if(PropertyChanged!=null)
+                PropertyChanged(this,new PropertyChangedEventArgs(prop));
         }
     }
 }

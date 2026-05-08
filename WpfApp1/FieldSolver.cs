@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using WpfApp1.Elements;
@@ -44,22 +45,22 @@ namespace WpfApp1
 
         private void CleanLine(int n)
         {
-            for (int i = 0; i < field.SizeY; i++)
+            for (int i = 0; i < field.SizeX; i++)
             {
-                if (fieldElements[n,i] is Space && ((Space)fieldElements[n, i]).state is Empty)
+                if (fieldElements[i, n] is Space && ((Space)fieldElements[i, n]).state is Empty)
                 {
-                    TurnToGrass(n,i);
+                    TurnToGrass(i, n);
                 }
             }
         }
 
         private void CleanRow(int n)
         {
-            for (int i = 0; i < field.SizeX; i++)
+            for (int i = 0; i < field.SizeY; i++)
             {
-                if (fieldElements[i, n] is Space && ((Space)fieldElements[i,n]).state is Empty)
+                if (fieldElements[n, i] is Space && ((Space)fieldElements[n, i]).state is Empty)
                 {
-                    TurnToGrass(i,n);
+                    TurnToGrass(n, i);
                 }
             }
         }
@@ -197,8 +198,8 @@ namespace WpfApp1
             int count = 0;
             for(int i=0;i<field.SizeX;i++)
             {
-                if (fieldElements[i,n] is Space)
-                if (((Space)fieldElements[i, n]).state is Tent)
+                if (fieldElements[n,i] is Space)
+                if (((Space)fieldElements[n, i]).state is Tent)
                     count++;
             }
             return count;
@@ -208,8 +209,8 @@ namespace WpfApp1
             int count = 0;
             for(int i=0;i<field.SizeY;i++)
             {
-                if (fieldElements[n,i] is Space)
-                if (((Space)fieldElements[n, i]).state is Tent)
+                if (fieldElements[i,n] is Space)
+                if (((Space)fieldElements[i, n]).state is Tent)
                     count++;
             }
             return count;
@@ -402,8 +403,67 @@ namespace WpfApp1
                             TurnToGrass(X, Y);
                         }
                     });
+                    if (IsBorderingOneTree(x,y))
+                    {
+                        (int,int) tree=FindBorderingTree(x,y);
+                        LinkTreeToTent(x,y,tree);
+                    }
                 }
             }
+        }
+
+        private void LinkTreeToTent(int x, int y, (int, int) tree)
+        {
+            RemoveTreeFromDictionaries(tree);
+            int i = 0;
+            while (CellsToTrees[(x, y)].Count > 0)
+            {
+                (int, int) cell = CellsToTrees[(x, y)][i];
+                if (cell == (x, y))
+                {
+                    i++;
+                    cell = CellsToTrees[(x, y)][i];
+                }
+                RemoveCellTreeConnection(cell, tree);
+            }
+            CellsToTrees[(x, y)] = new List<(int, int)>() { (x, y) };
+        }
+
+        private (int, int) FindBorderingTree(int x, int y)
+        {
+            int X, Y;
+            X = x - 1;
+            Y = y;
+            if (!field.IsInField(X, Y) && fieldElements[X, Y] is Tree)
+                return (X, Y);
+            X = x;
+            Y = y + 1;
+            if (!field.IsInField(X, Y) && fieldElements[X, Y] is Tree)
+                return (X, Y);
+            X = x + 1;
+            Y = y;
+            if (!field.IsInField(X, Y) && fieldElements[X, Y] is Tree)
+                return (X, Y);
+            X = x;
+            Y = y - 1;
+            if (!field.IsInField(X, Y) && fieldElements[X, Y] is Tree)
+                return (X, Y);
+            return (0, 0);
+        }
+
+        public bool IsBorderingOneTree(int x, int y)
+        {
+            int amountOfBorderingTrees = 0;
+            ForEachBorderingCell(x, y, (X, Y) =>
+            {
+                if (fieldElements[X, Y] is Tree)
+                {
+                    amountOfBorderingTrees++;
+                }
+            });
+            if (amountOfBorderingTrees == 1)
+                return true;
+            return false;
         }
         public void TurnToTentForTree(int x,int y,(int,int) tree)
         {
@@ -424,7 +484,7 @@ namespace WpfApp1
                         }
                     });
                     RemoveCellFromDictionaries(x, y);
-                    RemoveTreeFromDictionaries(tree.Item1, tree.Item2);
+                    RemoveTreeFromDictionaries(tree);
                 }
             }
         }
@@ -440,8 +500,10 @@ namespace WpfApp1
 
             }
         }
-        public void RemoveTreeFromDictionaries(int x,int y)
+        public void RemoveTreeFromDictionaries((int,int) tree)
         {
+            int x, y;
+            x = tree.Item1; y = tree.Item2;
             if (TreesToCells.ContainsKey((x, y)))
             {
                 for (int i = 0; i < TreesToCells[(x, y)].Count; i++)

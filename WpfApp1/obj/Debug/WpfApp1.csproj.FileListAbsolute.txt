@@ -32,3 +32,23 @@ C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Tree.g.cs
 C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Tree.baml
 C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Cell.g.cs
 C:\Users\User\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Cell.baml
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.exe.config
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Cell.g.cs
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Tree.g.cs
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\App.g.cs
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Cell.baml
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\Elements\Tree.baml
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\Руслан Габзалилов\Desktop\TreeGame\WpfApp1\obj\Debug\WpfApp1.pdb

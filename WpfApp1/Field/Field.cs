@@ -40,8 +40,8 @@ namespace WpfApp1
         }
         public void PlaceTent(int x,int y)
         {
-            horizontalNumbers[y]++;
-            verticalNumbers[x]++;
+            horizontalNumbers[x]++;
+            verticalNumbers[y]++;
             Cells[x,y] = new Tent();
         }
         public void PlaceTree(int x, int y)
